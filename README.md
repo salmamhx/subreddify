@@ -5,7 +5,7 @@ Subreddit Classifier – subreddify[.io]
 
 Using supervised learning, we try to train an ML model so that given an arbitrary title, the model tells us which subreddit the title will be most suited in.
 
-Ex: “AITA for killing my mom engaging in self-defensive martial arts while provoked by a feminine person?” the models returns “r/AmITheAsshole”
+Ex: “AITA for engaging in self-defensive martial arts while provoked by a feminine person?” the models returns “r/AmITheAsshole”
 
 Popular Subreddits:
 1. askreddit
