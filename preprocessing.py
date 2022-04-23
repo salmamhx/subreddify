@@ -39,7 +39,6 @@ def all_words_subreddit(df):
         row_length = len(df[subreddit])
         for i in range(row_length):
             post_title = df[subreddit][i]
-            # print(post_title)
             result.append(clean_text(post_title))
 
     return result
