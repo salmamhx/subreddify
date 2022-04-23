@@ -35,7 +35,7 @@ def add_to_dict(subreddit_name, dict_data):
         subreddit_name is the subreddit name
         dict_data is the dict to store data to
     """
-    for submission in reddit.subreddit(subreddit_name).top("month", limit=2):
+    for submission in reddit.subreddit(subreddit_name).top("month", limit=100):
         dict_data[subreddit_name].append(submission.title)
 
 def store_as_pandas(dict_data, column_names, file_name):
@@ -67,9 +67,3 @@ for i in range(len(curated)):
 # Store data in CSV files
 store_as_pandas(popular_dict, popular, 'popular_data')
 store_as_pandas(curated_dict, curated, 'curated_data')
-
-# popular_df = pd.DataFrame(popular_dict, columns = popular)
-# popular_df.to_csv('popular_data.csv')
-
-# curated_df = pd.DataFrame(curated_dict, columns = curated)
-# curated_df.to_csv('curated_data.csv')
