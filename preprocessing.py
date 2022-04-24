@@ -38,13 +38,21 @@ def all_words_subreddit(df):
     for subreddit in columns:
         row_length = len(df[subreddit])
         for i in range(row_length):
-            post_title = df[subreddit][i]
-            result.append(clean_text(post_title))
+            post_title = str(df[subreddit][i])
+            if post_title == 'nan':
+                result.append([[''], ''])
+            else:
+                result.append([clean_text(post_title), subreddit])
 
     return result
 
 
-df_popular = pd.read_csv('data/test_popular_data.csv')
-df_curated = pd.read_csv('data/test_curated_data.csv')
-all_words_popular = all_words_subreddit(df_popular)
-all_words_curated = all_words_subreddit(df_curated)
+# df_popular = pd.read_csv('data/test_popular_data.csv')
+# df_curated = pd.read_csv('data/test_curated_data.csv')
+df_extreme_curated = pd.read_csv('data/curated_extreme_data.csv')
+# all_words_popular = all_words_subreddit(df_popular)
+# all_words_curated = all_words_subreddit(df_curated)
+all_words_extreme_curated = all_words_subreddit(df_extreme_curated)
+f = open("test_list.txt", "a")
+f.write(f'{all_words_extreme_curated}')
+f.close()
