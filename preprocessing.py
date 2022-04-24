@@ -31,6 +31,11 @@ def all_words_subreddit(df):
     """
     Iterates through the given data frame and returns tokenized versions of all
     post titles within a subreddit.
+    
+    Data structure for words are:
+        all_words = [title1, title2, ..., title]
+        title = [list of words, subreddit]
+        list of words = [word1, word2, ..., word]
     """
     result = []
     columns = list(df)[1:]
