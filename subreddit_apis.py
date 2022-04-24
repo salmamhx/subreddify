@@ -41,8 +41,11 @@ def add_to_dict(subreddit_name, dict_data, num):
         dict_data is the dict to store data to
         limit is how many posts to scrape per subreddit
     """
-    for submission in reddit.subreddit(subreddit_name).top("all", limit=num):
-        dict_data[subreddit_name].append(submission.title)
+    time_filters = ['all', 'day', 'hour', 'month', 'week', 'year']
+    for time in time_filters:
+        for submission in reddit.subreddit(subreddit_name).top(time, limit=None):
+            dict_data[subreddit_name].append(submission.title)
+        print(f'Finished {time} in {subreddit_name}')
 
 def store_as_pandas(dict_data, column_names, file_name):
     """
@@ -72,6 +75,7 @@ def store_as_pandas(dict_data, column_names, file_name):
 
     df = pd.DataFrame(copy_dict, columns = column_names)
     df.to_csv(f'{file_name}.csv')
+        
 
 # Generate keys with empty lists for both dicts
 for name in popular:
@@ -95,4 +99,4 @@ for i in range(len(curated_extreme)):
 # Store data in CSV files
 # store_as_pandas(popular_dict, popular, 'popular_data')
 # store_as_pandas(curated_dict, curated, 'curated_data')
-store_as_pandas(curated_extreme_dict, curated_extreme, 'curated_extreme_data')
+store_as_pandas(curated_extreme_dict, curated_extreme, 'curated_extreme_data2')
