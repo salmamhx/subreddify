@@ -25,7 +25,9 @@ popular = ['askreddit', 'worldnews', 'funny', 'gaming', 'news', 'movies', 'tifu'
 curated = ['askreddit', 'news', 'gaming', 'movies', 'tifu', 'amitheasshole', 'todayilearned', 'lifeprotips', 'oldschoolcool', 'dataisbeautiful',
            'explainlikeimfive', 'mildlyinteresting', 'aww', 'twoxchromosomes', 'wallstreetbets', 'politics', 'cornell', 'technews']
 
-curated_extreme = ['amitheasshole', 'todayilearned', 'explainlikeimfive', 'news', 'askreddit', 'cornell']
+# curated_extreme = ['amitheasshole', 'todayilearned', 'explainlikeimfive', 'news', 'askreddit', 'cornell']
+curated_extreme = ['askreddit', 'news', 'gaming', 'movies', 'tifu', 'amitheasshole', 'todayilearned', 'lifeprotips', 'oldschoolcool', 'dataisbeautiful',
+           'explainlikeimfive', 'mildlyinteresting', 'aww', 'twoxchromosomes', 'wallstreetbets', 'politics', 'cornell', 'technews']
 
 # A dict where keys are strings (subreddit names) and values are a list of post titles
 popular_dict = {}
@@ -99,4 +101,4 @@ for i in range(len(curated_extreme)):
 # Store data in CSV files
 # store_as_pandas(popular_dict, popular, 'popular_data')
 # store_as_pandas(curated_dict, curated, 'curated_data')
-store_as_pandas(curated_extreme_dict, curated_extreme, 'curated_extreme_data2')
+store_as_pandas(curated_extreme_dict, curated_extreme, 'curated_extreme_data3')

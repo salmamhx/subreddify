@@ -103,10 +103,10 @@ def remove_duplicates(data_dict, columns):
         
         result_dict[key] = result_lst
 
-    store_as_pandas(result_dict, columns, 'deduplicated_curated_extreme_data2')
+    store_as_pandas(result_dict, columns, 'deduplicated_curated_extreme_data3')
 
 
-df_extreme_curated2 = pd.read_csv('curated_extreme_data2.csv')
+df_extreme_curated2 = pd.read_csv('curated_extreme_data3.csv')
 columns = list(df_extreme_curated2)[1:]
 print(columns)
 remove_duplicates(df_extreme_curated2, columns)
